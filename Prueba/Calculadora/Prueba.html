@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Tienda</title>
+</head>
+<body>
+   <h1>Productos disponibles en la tienda:</h1>
+   <ul>
+      {% for producto in productos %}
+      <li>
+         <strong>Nombre:</strong> {{ producto.nombre }}<br>
+         <strong>Tipo:</strong> {{ producto.tipo }}<br>
+         <strong>Cantidad:</strong> {{ producto.cantidad_actual }}<br>
+         <strong>Precio Base:</strong> {{ producto.precio_base }}
+      </li>
+      {% endfor %}
+   </ul>
+
+      <h1>Resultados:</h1>
+      <p>{{ venta_resultado }}</p>
+      <p>{{ abastecer_resultado }}</p>
+      <p>{{ cambiar_resultado }}</p>
+      <p>Estadísticas de ventas:</p>
+   <ul>
+      <li>Producto más vendido: {{ estadisticas_ventas.producto_mas_vendido }}</li>
+      <li>Producto menos vendido: {{ estadisticas_ventas.producto_menos_vendido }}</li>
+      <li>Cantidad total de dinero obtenido por las ventas de la tienda: {{ estadisticas_ventas.total_dinero_ventas }}</li>
+      <li>Cantidad de dinero promedio obtenido por unidad de producto vendida: {{ estadisticas_ventas.promedio_dinero_unidad_vendida }}</li>
+   </ul>
+</body>
+</html>
